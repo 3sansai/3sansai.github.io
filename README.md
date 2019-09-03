@@ -1,1 +1,1 @@
-blog.3sansai.github.io
+blog.3sansai.fun
