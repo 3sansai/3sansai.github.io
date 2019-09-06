@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content>
+    <meta name="author" content="3sansai">
+    <meta name="keywords" content>
+    <title>linux-基础语法 ~ 3sansai</title>
+    <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css?v=5.7.2">
+    <link rel="stylesheet" href="/lib/mdbootstrap/css/bootstrap.min.css?v=4.3.1">
+    <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css?v=4.8.7">
+    <link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css">
+    <link rel="stylesheet" href="/lib/nprogress/nprogress.css?v=0.2.0">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+    
+        <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css">
+    
+    <link rel="stylesheet" href="/css/main.css">
+
+    
+</head>
+
+
+<body>
+<header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+<div class="container">
+    <a class="navbar-brand" href="/">&nbsp;<strong>3sansai</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto text-center">
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/archives/">Archives</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/categories/">Categories</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/tags/">Tags</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+</nav>
+    <div class="view intro-2"
+         style="background: url('/img/post.jpg')no-repeat center center;background-size: cover;">
+        <div class="full-bg-img">
+            <div class="mask rgba-black-light flex-center">
+                <div class="container text-center white-text wow fadeInUp">
+                    <span class="h2" id="subtitle">
+                        
+                    </span>
+                    
+                        <br>
+                        <p>Friday, September 6th 2019, 8:50 am</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    
+        
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="d-none d-lg-block col-lg-2"></div>
+            <div class="col-lg-8 nopadding-md">
+                <div class="py-5 z-depth-3 board">
+                    <div class="post-content mx-auto">
+                        <div class="markdown-body">
+                            <p>Linux语句<br>.tar</p>
+<pre><code>解包：tar xvf FileName.tar
+打包：tar cvf FileName.tar DirName
+（注：tar是打包，不是压缩！）</code></pre><p>.gz</p>
+<pre><code>解压1：gunzip FileName.gz
+解压2：gzip -d FileName.gz
+压缩：gzip FileName</code></pre><p>.tar.gz 和 .tgz</p>
+<pre><code>解压：tar zxvf FileName.tar.gz
+压缩：tar zcvf FileName.tar.gz DirName</code></pre><p>mv file1 file2</p>
+<pre><code>把当前目录下的file1文件名改成file2，如果该目录下有file2，则覆盖以前的file2文件。</code></pre><p>cp [options] sourcedir   destdir</p>
+<pre><code>参数说明：
+    -a：此选项通常在复制目录时使用，它保留链接、文件属性，并复制目录下的所有内容。其作用等于dpR参数组合。
+    -d：复制时保留链接。这里所说的链接相当于Windows系统中的快捷方式。
+    -f：覆盖已经存在的目标文件而不给出提示。
+    -i：与-f选项相反，在覆盖目标文件之前给出提示，要求用户确认是否覆盖，回答&quot;y&quot;时目标文件将被覆盖。
+    -p：除复制文件的内容外，还把修改时间和访问权限也复制到新文件中。
+    -r：若给出的源文件是一个目录文件，此时将复制该目录下所有的子目录和文件。
+    -l：不复制文件，只是生成链接文件。    
+
+pwd       显示当前所在目录路径
+目录结构
+/    根目录
+root    系统管理员的家目录
+home    其他用户的家目录
+bin     存放二进制文件，可执行文件，常用命令
+etc    存放系统的配置文件
+lib     存放系统使用的函数类库
+tem    存放临时文件
+usr    存放应用程序 安装三方应用时存放的目录jdk
+var    存放系统使用时经常发生变化的文件</code></pre><p>su 用户名    切换用户</p>
+<pre><code>useradd 用户名    创建用户
+passwd  用户名    修改用户密码
+userdel -r 用户名    删除用户</code></pre><p>touch xx 创建文件<br>vi/vim编辑器</p>
+<pre><code> vi 文件名
+        按字母i  进入到插入模式
+        在插入模式中修改文件内容
+ Esc     退出插入
+ 按：    进入底行模式
+ wq      保存退出
+ q！     不保存退出
+
+查看文件内容
+ cat     路径/文件名称
+ more   路径/文件名称 可以向下翻页，查看文件内容 使用空格来实现向下翻页
+ less    路径/文件名称 可以向下翻页，也可以向上翻页，向上翻页pgup   向下翻页pgdn
+ tail     10  路径/文件名称
+     -f  路径/文件名称    动态显示文件内容</code></pre><p>cd使用</p>
+<pre><code>cd /      根目录
+cd ~      不管在什么文件打开home目录
+cd ..     返回当前目录的上级目录
+cd -      返回上一个目录</code></pre><p>ls     显示当前目录下的目录和子文件</p>
+<pre><code>-a     显示所有文件和子目录
+-l     显示文件详情
+-h     带单位显示文件或文件夹大小</code></pre><p>ll       件详情 等价于 ls -l</p>
+<pre><code>man      帮助文档
+clear  假清理屏幕
+reset  真清屏
+
+
+mkdir  目录名称   当前目录下创建目录
+       路径/目录名称  指定目录下创建目录 路径目录必须已经存在的
+       -p  路径/目录名称  创建路径目录创建目录</code></pre><p>rmdir  目录名称   删除名称目录，如果目录下存在子目录，不能删除<br>    路径/目录名称 删除路径下的名称目录</p>
+<pre><code>rm     路径/目录名称 可以删除有内容文件的目录
+rm -f      强制删除文件，不能删除目录，没有提示
+rm -r      递归删除文件目录，有提示递归删除
+rm -f -r     直接删除目录，没有提示，混合使用</code></pre><p>复制文件</p>
+<pre><code>cp       数据源    目的地/文件名
+mv    数据源    目的地/文件名（移动文件，重命名）    </code></pre><p>文本检索</p>
+<pre><code> grep    检索规则 路径/名称 -A10（检索的前面10行） -B10（后面10行）
+管道
+ 第一个命令 | 第二个命令    将第一个命令的结果使用第二种命令来输出</code></pre>
+                            <hr>
+                        </div>
+                        <br>
+                        <div>
+                            
+                            <p>
+                                <i class="iconfont icon-tag"></i>
+                                
+                                    <a class="hover-with-bg" href="/tags/Linux">Linux</a>
+                                
+                            </p>
+                            
+                                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="d-none d-lg-block col-lg-2 toc-container">
+            
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i> Toc:</p> 
+    <div id="tocbot"></div>
+  </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container comments mx-auto" id="comments">
+        
+    </div>
+</div>
+    
+</main>
+
+<footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/0x2e/Material-T" target="_blank" rel="nofollow noopener"> <b>Material-T</b></a>
+    <br>
+    
+  </div>
+</footer>
+
+  <!-- SCRIPTS -->
+  <script src="/lib/mdbootstrap/js/jquery-3.4.1.min.js"></script>
+  <script src="/lib/mdbootstrap/js/popper.min.js"></script>
+  <script src="/lib/mdbootstrap/js/bootstrap.min.js?v=4.3.1"></script>
+  <script src="/lib/mdbootstrap/js/mdb.min.js?v=4.8.7"></script>
+  <script src="/lib/nprogress/nprogress.min.js?v=0.2.0"></script>
+  <script src="/js/main.js"></script>
+  
+    
+      <script src="/lib/tocbot/tocbot.min.js?v=4.7.0"></script>
+    
+    <script src="/js/post.js"></script>
+  
+  
+    <script src="/lib/prettify/prettify.min.js?v=0.1.0"></script>
+    <script>
+      $(document).ready(function(){
+        $('pre').addClass('prettyprint linenums');
+        prettyPrint();
+      })
+    </script>
+  
+  
+    <script src="/lib/typed/typed.min.js?v=2.0.9"></script>
+    <script>
+        var typed = new Typed('#subtitle', {
+          strings: [
+            '  ',
+            "linux-基础语法&nbsp;",
+        ],
+        cursorChar: "_",
+        typeSpeed: 70,
+        startDelay: 300, //开始之前延迟300毫秒
+        loop: false,
+        });
+        $(".typed-cursor").addClass("h2");
+    </script>
+  
+  
+    <script src="/lib/anchor/anchor.min.js?v=4.2.0"></script>
+    <script>
+      anchors.options = {
+        placement: "right",
+        visible: "false",
+        
+      };
+      anchors.add(".post-content > h1,h2,h3,h4,h5,h6");
+    </script>
+  
+</body>
+</html>
