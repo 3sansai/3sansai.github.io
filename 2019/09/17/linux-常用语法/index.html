@@ -97,36 +97,81 @@
                     <div class="post-content mx-auto">
                         <div class="markdown-body">
                             <p>规范: </p>
-<ol>
-<li>windows 的 jdk 安装位置不能有中文, 不能有空格. </li>
-<li>建立的项目路径中不能有中文, 不能有空格.</li>
-<li>虚拟机中均使用 root 权限.</li>
-<li>虚拟机中安装路径统一</li>
-<li>虚拟机密码简单[为了方便] </li>
-<li>使用统一的版本.  </li>
-<li>如果课程中讲的有什么问题,课后讨论.<br>adduser 用户名<br>passwd 用户名(给指定用户添加密码)<br>cat /etc/passwd  查看所有用户</li>
-</ol>
-<p>使用sftp:</p>
-<p>注意你操作的是本地环境 还是远程linux环境<br>命令不同   l–&gt;local<br>上传put  从哪里上传到哪里<br>下载get  从哪里下载到哪里<br>以及操作的文件是什么<br>（一般用rz从电脑本地拉取）</p>
-<p>安装虚拟机（克隆）</p>
-<p>在启动前先生成MAC地址<br>注意网卡的设置<br>删除70-persistent-net.rules目录，其中的mac地址也会被删除，重启后会自动重新生成<br>rm -rf /etc/udev/rules..d/70-persistent-net.rules<br>修改网卡设置<br>vim /etc/sysconfig/network-scripts/ifcfg-eth0<br>修改主机的名字<br>vi /etc/sysconfig/network<br>设置IP地址<br>setup<br>重启<br>reboot</p>
-<p>网络映射修改hosts文件</p>
-<p>vim /etc/hosts<br>192.168.200.134 node-1</p>
-<p>SSH安全外壳协议 </p>
-<p>Secure Shell，是一种网络安全协议，专门为远程登陆会话和其他网络服务提供安全的协议<br>在node-1机器上<br>ssh-keygen -t rsa 按四下回车<br>生成密钥文件和私钥文件 id_rsa,id_rsa.pub<br>将公钥拷贝给node-2机器<br>ssh-copy-id node2<br>首次登陆需要密码以后就是免密登陆</p>
-<p>grep</p>
-<p>ps -ef | grep sshd 查找指定 ssh 服务进程<br>ps -ef | grep sshd | grep -v grep 查找指定服务进程，排除 gerp 本身<br>ps -ef | grep sshd – c 查找指定进程个数<br>cat a.txt | grep -f b.txt 从文件中读取关键词进行搜索<br>输出 a.txt 文件中含有从 b.txt 文件中读取出的关键词的内容行<br>cat a.txt | grep – nf b.txt 从文件中读取关键词进行搜索,显示行号<br>grep -n ‘linux’ test.txt 从文件中查找关键词，并显示行号<br>cat test.txt |grep ^u 找出以 u 开头的行内容<br>cat test.txt |grep ^[^u] 输出非 u 开头的行内容<br>cat test.txt |grep hat$ 输出以 hat 结尾的行内容<br>cat test.txt |grep -E “ed|at” 显示包含 ed 或者 at 字符的内容行</p>
-<p>find</p>
-<p>find . -name “<em>.log” -ls 在当前目录查找以.log 结尾的文件， 并显示详细信息<br>find /root/ -perm 777 查找/root/目录下权限为 777 的文件<br>find . -type f -name “</em>.log” 查找当目录，以.log 结尾的普通文件<br>find . -type d | sort 查找当前所有目录并排序<br>find . -size +100M 查找当前目录大于 100M 的文件</p>
-<p>locate</p>
-<p>locate 让使用者可以很快速的搜寻档案系统内是否有指定的档案。其方法<br>是先建立一个包括系统内所有档案名称及路径的数据库。 之后当寻找时就只需查<br>询这个数据库（/var/lib/locatedb）<br>如果是精简版 CentOS 系统需要安装 locate 命令<br>yum -y install mlocate<br>updatedb 命令来创建 locate 命令依赖的数据库<br>updatedb<br>使用实例：<br>locate /etc/sh<br>搜索 etc 目录下所有以 sh 开头的文件<br>locate pwd<br>查找和 pwd 相关的所有文件</p>
+<pre><code>1. windows 的 jdk 安装位置不能有中文, 不能有空格. 
+2. 建立的项目路径中不能有中文, 不能有空格.
+3. 虚拟机中均使用 root 权限.
+4. 虚拟机中安装路径统一
+5. 虚拟机密码简单[为了方便] 
+6. 使用统一的版本.  
+7. 如果课程中讲的有什么问题,课后讨论.
+adduser 用户名
+passwd 用户名(给指定用户添加密码)
+ cat /etc/passwd  查看所有用户</code></pre><p>使用sftp:</p>
+<pre><code>注意你操作的是本地环境 还是远程linux环境
+命令不同   l--&gt;local
+上传put  从哪里上传到哪里
+下载get  从哪里下载到哪里
+以及操作的文件是什么
+（一般用rz从电脑本地拉取）</code></pre><p>安装虚拟机（克隆）</p>
+<pre><code>在启动前先生成MAC地址
+注意网卡的设置
+删除70-persistent-net.rules目录，其中的mac地址也会被删除，重启后会自动重新生成
+rm -rf /etc/udev/rules..d/70-persistent-net.rules
+修改网卡设置
+vim /etc/sysconfig/network-scripts/ifcfg-eth0
+修改主机的名字
+vi /etc/sysconfig/network
+设置IP地址
+setup
+重启
+reboot</code></pre><p>网络映射修改hosts文件</p>
+<pre><code>vim /etc/hosts
+192.168.200.134 node-1</code></pre><p>SSH安全外壳协议 </p>
+<pre><code>Secure Shell，是一种网络安全协议，专门为远程登陆会话和其他网络服务提供安全的协议
+在node-1机器上
+ssh-keygen -t rsa 按四下回车
+生成密钥文件和私钥文件 id_rsa,id_rsa.pub
+将公钥拷贝给node-2机器
+ssh-copy-id node2
+首次登陆需要密码以后就是免密登陆</code></pre><p>grep</p>
+<pre><code>ps -ef | grep sshd 查找指定 ssh 服务进程
+ps -ef | grep sshd | grep -v grep 查找指定服务进程，排除 gerp 本身
+ps -ef | grep sshd – c 查找指定进程个数
+cat a.txt | grep -f b.txt 从文件中读取关键词进行搜索
+输出 a.txt 文件中含有从 b.txt 文件中读取出的关键词的内容行
+cat a.txt | grep – nf b.txt 从文件中读取关键词进行搜索,显示行号
+grep -n &apos;linux&apos; test.txt 从文件中查找关键词，并显示行号
+cat test.txt |grep ^u 找出以 u 开头的行内容
+cat test.txt |grep ^[^u] 输出非 u 开头的行内容
+cat test.txt |grep hat$ 输出以 hat 结尾的行内容
+cat test.txt |grep -E &quot;ed|at&quot; 显示包含 ed 或者 at 字符的内容行</code></pre><p>find</p>
+<pre><code>find . -name &quot;*.log&quot; -ls 在当前目录查找以.log 结尾的文件， 并显示详细信息
+find /root/ -perm 777 查找/root/目录下权限为 777 的文件
+find . -type f -name &quot;*.log&quot; 查找当目录，以.log 结尾的普通文件
+find . -type d | sort 查找当前所有目录并排序
+find . -size +100M 查找当前目录大于 100M 的文件</code></pre><p>locate</p>
+<pre><code>locate 让使用者可以很快速的搜寻档案系统内是否有指定的档案。其方法
+是先建立一个包括系统内所有档案名称及路径的数据库。 之后当寻找时就只需查
+询这个数据库（/var/lib/locatedb）
+如果是精简版 CentOS 系统需要安装 locate 命令
+yum -y install mlocate
+updatedb 命令来创建 locate 命令依赖的数据库
+updatedb</code></pre><p>使用实例：<br>    locate /etc/sh<br>    搜索 etc 目录下所有以 sh 开头的文件<br>    locate pwd<br>    查找和 pwd 相关的所有文件</p>
 <p>whereis</p>
-<p>whereis 命令是定位可执行文件、源代码文件、帮助文件在文件系统中的位<br>置。这些文件的属性应属于原始代码，二进制文件，或是帮助文件。<br>whereis 和下 locate 一样，会从数据库中查找数据，而不是像 find 命令那<br>样，通过遍历硬盘来查找。<br>使用实例：<br>whereis ls 将和 ls 文件相关的文件都查找出来<br>ls: /bin/ls /usr/share/man/man1/ls.1.gz<br>whereis -m ls 查找 ls 命令说明文档路径<br>whereis -s ls 查找 ls 源文件</p>
+<pre><code>whereis 命令是定位可执行文件、源代码文件、帮助文件在文件系统中的位
+置。这些文件的属性应属于原始代码，二进制文件，或是帮助文件。
+whereis 和下 locate 一样，会从数据库中查找数据，而不是像 find 命令那
+样，通过遍历硬盘来查找。</code></pre><p>使用实例：<br>    whereis ls 将和 ls 文件相关的文件都查找出来<br>    ls: /bin/ls /usr/share/man/man1/ls.1.gz<br>    whereis -m ls 查找 ls 命令说明文档路径<br>    whereis -s ls 查找 ls 源文件</p>
 <p>which</p>
-<p>which 命令的作用是在 PATH 变量指定的路径中，搜索某个系统命令的位置，<br>并且返回第一个搜索结果。也就是说，使用 which 命令，就可以看到某个系统命<br>令是否存在，以及执行的到底是哪一个位置的命令。<br>使用实例：<br>which pwd 查找 pwd 命令所在路径<br>/bin/pwd<br>which java 查找 path 中 java 的路径<br>/root/apps/jdk1.8.0_65/bin/java<br>which 是根据使用者所配置的 PATH 变量内的目录去搜寻可运行档， 所以，<br>不同的 PATH 配置内容所找到的命令会不一样。</p>
+<pre><code>    which 命令的作用是在 PATH 变量指定的路径中，搜索某个系统命令的位置，
+并且返回第一个搜索结果。也就是说，使用 which 命令，就可以看到某个系统命
+令是否存在，以及执行的到底是哪一个位置的命令。</code></pre><p>使用实例：<br>    which pwd 查找 pwd 命令所在路径<br>    /bin/pwd<br>    which java 查找 path 中 java 的路径<br>    /root/apps/jdk1.8.0_65/bin/java<br>    which 是根据使用者所配置的 PATH 变量内的目录去搜寻可运行档， 所以，<br>    不同的 PATH 配置内容所找到的命令会不一样。</p>
 <p>su</p>
-<p>su用于用户之间的切换<br>su在不加任何参数状态下，默认切换到root用户，但没有转到root用户根目录下；<br>su加参数-，表示默认切换到root用户，并转到root用户根目录下。<br>su不足：如果某个用户需要使用root权限，就必须把root密码告诉他<br>退出返回之前的用户：exit</p>
-<p>sudo</p>
+<pre><code>su用于用户之间的切换
+su在不加任何参数状态下，默认切换到root用户，但没有转到root用户根目录下；
+su加参数-，表示默认切换到root用户，并转到root用户根目录下。
+su不足：如果某个用户需要使用root权限，就必须把root密码告诉他
+退出返回之前的用户：exit</code></pre><p>sudo</p>
 
                             <hr>
                         </div>
@@ -136,7 +181,7 @@
                             <p>
                                 <i class="iconfont icon-tag"></i>
                                 
-                                    <a class="hover-with-bg" href="/tags/linux">linux</a>
+                                    <a class="hover-with-bg" href="/tags/Linux">Linux</a>
                                 
                             </p>
                             
