@@ -14,7 +14,7 @@
     <meta name="description" content>
     <meta name="author" content="3sansai">
     <meta name="keywords" content>
-    <title>Archives ~ 3sansai</title>
+    <title>linux-权限命令 ~ 3sansai</title>
     <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css?v=5.7.2">
     <link rel="stylesheet" href="/lib/mdbootstrap/css/bootstrap.min.css?v=4.3.1">
     <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css?v=4.8.7">
@@ -31,7 +31,7 @@
 
 
 <body>
-<header style="height: 80vh;">
+<header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
 <div class="container">
     <a class="navbar-brand" href="/">&nbsp;<strong>3sansai</strong>&nbsp;</a>
@@ -68,13 +68,16 @@
 
 </nav>
     <div class="view intro-2"
-         style="background: url('/img/archive.jpg')no-repeat center center;background-size: cover;">
+         style="background: url('/img/post.jpg')no-repeat center center;background-size: cover;">
         <div class="full-bg-img">
             <div class="mask rgba-black-light flex-center">
                 <div class="container text-center white-text wow fadeInUp">
                     <span class="h2" id="subtitle">
                         
                     </span>
+                    
+                        <br>
+                        <p>Tuesday, September 17th 2019, 1:08 am</p>
                     
                 </div>
             </div>
@@ -84,52 +87,73 @@
 
 <main>
     
-        <div class="container nopadding-md">
-            <div class="py-5 z-depth-3 board">
-                
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-md-10 m-auto">
+        
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="d-none d-lg-block col-lg-2"></div>
+            <div class="col-lg-8 nopadding-md">
+                <div class="py-5 z-depth-3 board">
+                    <div class="post-content mx-auto">
+                        <div class="markdown-body">
+                            <p>常用的文件权限：</p>
+<pre><code>444 r--r--r--
+600 rw-------
+644 rw-r--r--
+666 rw-rw-rw-
+700 rwx------
+744 rwxr--r--
+755 rwxr-xr-x
+777 rwxrwxrwx</code></pre><p>从左至右，1-3位数字代表文件所有者的权限，4-6位数字代表同组用户的权限，7-9数字代表其他用户的权限。<br>而具体的权限是由数字来表示的，读取的权限等于4，用r表示；写入的权限等于2，用w表示；执行的权限等于1，用x表示；<br>通过4、2、1的组合，得到以下几种权限：0（没有权限）；4（读取权限）；5（4+1 | 读取+执行）；6（4+2 | 读取+写入）；7（4+2+1 | 读取+写入+执行）<br>以755为例：</p>
+<pre><code>1-3位7等于4+2+1，rwx，所有者具有读取、写入、执行权限；
+4-6位5等于4+1+0，r-x，同组用户具有读取、执行权限但没有写入权限；
+7-9位5，同上，也是r-x，其他用户具有读取、执行权限但没有写入权限。</code></pre><p>rwx权限数字解释 </p>
+<pre><code>chmod也可以用数字来表示权限如 chmod 777 file
+语法为：chmod abc file
+其中a,b,c各为一个数字，分别表示User、Group、及Other的权限。
+r=4，w=2，x=1
+若要rwx属性则4+2+1=7；
+若要rw-属性则4+2=6；
+若要r-x属性则4+1=7。</code></pre><p>范例：</p>
+<pre><code>chmod a=rwx file 和 chmod 777 file 效果相同
+chmod ug=rwx,o=x file 和 chmod 771 file 效果相同
+若用chmod 4755 filename可使此程序具有root的权限</code></pre>
+                            <hr>
+                        </div>
+                        <br>
+                        <div>
                             
-
-<div class="list-group">
-    <p class="h4">Total: 4</p>
-    <hr>
-    
-        
-            
-            <p class="h5">2019</p>
-        
-        <a href="/2019/09/17/linux-权限命令/" class="list-group-item list-group-item-action">
-            <span class="archive-post-title">linux-权限命令</span>
-            <span style="float: right;">09-17</span>
-        </a>
-    
-        
-        <a href="/2019/09/17/linux-常用语法/" class="list-group-item list-group-item-action">
-            <span class="archive-post-title">linux-常用语法</span>
-            <span style="float: right;">09-17</span>
-        </a>
-    
-        
-        <a href="/2019/09/06/linux-基础语法/" class="list-group-item list-group-item-action">
-            <span class="archive-post-title">linux-基础语法</span>
-            <span style="float: right;">09-06</span>
-        </a>
-    
-        
-        <a href="/2019/09/03/hello-world/" class="list-group-item list-group-item-action">
-            <span class="archive-post-title">Hello World</span>
-            <span style="float: right;">09-03</span>
-        </a>
-    
-</div>
-
+                            <p>
+                                <i class="iconfont icon-tag"></i>
+                                
+                            </p>
+                            
+                                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+                            
                         </div>
                     </div>
                 </div>
             </div>
+        <div class="d-none d-lg-block col-lg-2 toc-container">
+            
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i> Toc:</p> 
+    <div id="tocbot"></div>
+  </div>
+
         </div>
+    </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container comments mx-auto" id="comments">
+        
+    </div>
+</div>
     
 </main>
 
@@ -151,6 +175,11 @@
   <script src="/lib/nprogress/nprogress.min.js?v=0.2.0"></script>
   <script src="/js/main.js"></script>
   
+    
+      <script src="/lib/tocbot/tocbot.min.js?v=4.7.0"></script>
+    
+    <script src="/js/post.js"></script>
+  
   
     <script src="/lib/prettify/prettify.min.js?v=0.1.0"></script>
     <script>
@@ -166,7 +195,7 @@
         var typed = new Typed('#subtitle', {
           strings: [
             '  ',
-            "Archives&nbsp;",
+            "linux-权限命令&nbsp;",
         ],
         cursorChar: "_",
         typeSpeed: 70,
