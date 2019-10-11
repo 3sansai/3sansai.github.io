@@ -6,203 +6,285 @@
 
 
 <head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="UTF-8">
-    <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="/img/favicon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content>
-    <meta name="author" content="3sansai">
-    <meta name="keywords" content>
-    <title>java-基础01 ~ 3sansai</title>
-    <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css?v=5.7.2">
-    <link rel="stylesheet" href="/lib/mdbootstrap/css/bootstrap.min.css?v=4.3.1">
-    <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css?v=4.8.7">
-    <link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css">
-    <link rel="stylesheet" href="/lib/nprogress/nprogress.css?v=0.2.0">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
-    
-        <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css">
-    
-    <link rel="stylesheet" href="/css/main.css">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Mysql / Java / Js / WxChartWeb">
+  <meta name="author" content="3sansai">
+  <meta name="keywords" content="Dream">
+  <title>java-基础01 ~ 3sansai</title>
+  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
+  <link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+  
+    <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css">
+  
+  <link rel="stylesheet" href="/css/main.css">
 
-    
+  
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?[object Object]";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
 </head>
 
 
 <body>
-<header style="height: 70vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-<div class="container">
-    <a class="navbar-brand" href="/">&nbsp;<strong>3sansai</strong>&nbsp;</a>
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>3sansai</strong>&nbsp;</a>
 
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <div class="animated-icon"><span></span><span></span><span></span></div>
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
     </button>
 
     <!-- Collapsible content -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto text-center">
-            
-            <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="/archives/">Archives</a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="/categories/">Categories</a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="/tags/">Tags</a>
-            </li>
-            
-        </ul>
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">Archives</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">Categories</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">Tags</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
     </div>
-</div>
+  </div>
 
 
 </nav>
-    <div class="view intro-2"
-         style="background: url('/img/post.jpg')no-repeat center center;background-size: cover;">
-        <div class="full-bg-img">
-            <div class="mask rgba-black-light flex-center">
-                <div class="container text-center white-text wow fadeInUp">
-                    <span class="h2" id="subtitle">
-                        
-                    </span>
-                    
-                        <br>
-                        <p>Wednesday, September 18th 2019, 10:54 pm</p>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
 
-<main>
+    <div class="view intro-2"
+         style="background: url('/img/default.png')no-repeat center center;
+           background-size: cover;
+           background-attachment: fixed;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              <p>星期三, 九月 18日 2019, 10:54 晚上</p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
     
-        
+      
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="d-none d-lg-block col-lg-2"></div>
-            <div class="col-lg-8 nopadding-md">
-                <div class="py-5 z-depth-3 board">
-                    <div class="post-content mx-auto">
-                        <div class="markdown-body">
-                            <p>关键字</p>
-<pre><code>abstract ：表明类或者成员方法具有抽象属性
-assert ：断言，用来进行程序调试
-boolean ：基本数据类型之一，声明布尔类型的关键字
-break ： 提前跳出一个块
-byte ：基本数据类型之一，字节类型
-case ：用在switch语句之中，表示其中的一个分支
-catch ：用在异常处理中，用来捕捉异常
-char ：基本数据类型之一，字符类型
-class ：声明一个类
-const ：保留关键字，没有具体含义
-continue ：回到一个块的开始处
-default ：默认，例如，用在switch语句中，表明一个默认的分支。Java8 中也作用于声明接口函数的默认实现
-do ：用在do-while循环结构中
-double ：基本数据类型之一，双精度浮点数类型
-else ：用在条件语句中，表明当条件不成立时的分支
-enum ：枚举
-extends ：表明一个类型是另一个类型的子类型。对于类，可以是另一个类或者抽象类；对于接口，可以是另一个接口
-final ：用来说明最终属性，表明一个类不能派生出子类，或者成员方法不能被覆盖，或者成员域的值不能被改变，用来定义常量
-finally ：用于处理异常情况，用来声明一个基本肯定会被执行到的语句块
-float ：基本数据类型之一，单精度浮点数类型
-for ：一种循环结构的引导词
-goto ：保留关键字，没有具体含义
-if ：条件语句的引导词
-implements ：表明一个类实现了给定的接口
-import ：表明要访问指定的类或包
-instanceof ：用来测试一个对象是否是指定类型的实例对象
-int ：基本数据类型之一，整数类型
-interface ：接口
-long ：基本数据类型之一，长整数类型
-native ：用来声明一个方法是由与计算机相关的语言（如C/C++/FORTRAN语言）实现的
-new ：用来创建新实例对象
-package ：包
-private ：一种访问控制方式：私用模式
-protected ：一种访问控制方式：保护模式
-public ：一种访问控制方式：共用模式
-return ：从成员方法中返回数据
-static ：表明具有静态属性
-strictfp ：用来声明FP_strict（单精度或双精度浮点数）表达式遵循IEEE 754算术规范
-super ：表明当前对象的父类型的引用或者父类型的构造方法
-switch ：分支语句结构的引导词
-synchronized ：表明一段代码需要同步执行
-this ：指向当前实例对象的引用
-throw ：抛出一个异常
-throws ：声明在当前定义的成员方法中所有需要抛出的异常
-transient ：声明不用序列化的成员域
-try ：尝试一个可能抛出异常的程序块
-void ：声明当前成员方法没有返回值
-volatile ：表明两个或者多个变量必须同步地发生变化
-while ：用在循环结构中</code></pre><p>数据类型：</p>
-<pre><code>byte: 
-    取值范围：-2^7~2^7-1
-    所占空间：1个字节，8位
-short:
-    取值范围：-2^15~2^15-1
-    所占空间：2个字节，16位
-int:
-    取值范围：-2^31~2^31-1
-    所占空间：4个字节，32位
-long:
-    取值范围：-2^63~2^63-1
-    所占空间：8个字节，64位
-float:
-    单精度32位
-    所占空间：4个字节
-double:
-    双精度64位
-    所占空间：8个字节
-char: 
-    所占空间：2个字节
-boolean:
-    所占空间：1/8个字节，1bit</code></pre><p>private、default、protected、public的作用范围</p>
-<pre><code>private:表示私有，只有自己的类能访问。----子类能继承，但是不能调用。
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto">
+          <div class="markdown-body">
+            <h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><ul>
+<li>abstract ：表明类或者成员方法具有抽象属性</li>
+<li>assert ：断言，用来进行程序调试</li>
+<li>boolean ：基本数据类型之一，声明布尔类型的关键字</li>
+<li>break ： 提前跳出一个块</li>
+<li>byte ：基本数据类型之一，字节类型</li>
+<li>case ：用在switch语句之中，表示其中的一个分支</li>
+<li>catch ：用在异常处理中，用来捕捉异常</li>
+<li>char ：基本数据类型之一，字符类型</li>
+<li>class ：声明一个类</li>
+<li>const ：保留关键字，没有具体含义</li>
+<li>continue ：回到一个块的开始处</li>
+<li>default ：默认，例如，用在switch语句中，表明一个默认的分支。Java8 中也作用于声明接口函数的默认实现</li>
+<li>do ：用在do-while循环结构中</li>
+<li>double ：基本数据类型之一，双精度浮点数类型</li>
+<li>else ：用在条件语句中，表明当条件不成立时的分支</li>
+<li>enum ：枚举</li>
+<li>extends ：表明一个类型是另一个类型的子类型。对于类，可以是另一个类或者抽象类；对于接口，可以是另一个接口</li>
+<li>final ：用来说明最终属性，表明一个类不能派生出子类，或者成员方法不能被覆盖，或者成员域的值不能被改变，用来定义常量</li>
+<li>finally ：用于处理异常情况，用来声明一个基本肯定会被执行到的语句块</li>
+<li>float ：基本数据类型之一，单精度浮点数类型</li>
+<li>for ：一种循环结构的引导词</li>
+<li>goto ：保留关键字，没有具体含义</li>
+<li>if ：条件语句的引导词</li>
+<li>implements ：表明一个类实现了给定的接口</li>
+<li>import ：表明要访问指定的类或包</li>
+<li>instanceof ：用来测试一个对象是否是指定类型的实例对象</li>
+<li>int ：基本数据类型之一，整数类型</li>
+<li>interface ：接口</li>
+<li>long ：基本数据类型之一，长整数类型</li>
+<li>native ：用来声明一个方法是由与计算机相关的语言（如C/C++/FORTRAN语言）实现的</li>
+<li>new ：用来创建新实例对象</li>
+<li>package ：包</li>
+<li>private ：一种访问控制方式：私用模式</li>
+<li>protected ：一种访问控制方式：保护模式</li>
+<li>public ：一种访问控制方式：共用模式</li>
+<li>return ：从成员方法中返回数据</li>
+<li>static ：表明具有静态属性</li>
+<li>strictfp ：用来声明FP_strict（单精度或双精度浮点数）表达式遵循IEEE 754算术规范</li>
+<li>super ：表明当前对象的父类型的引用或者父类型的构造方法</li>
+<li>switch ：分支语句结构的引导词</li>
+<li>synchronized ：表明一段代码需要同步执行</li>
+<li>this ：指向当前实例对象的引用</li>
+<li>throw ：抛出一个异常</li>
+<li>throws ：声明在当前定义的成员方法中所有需要抛出的异常</li>
+<li>transient ：声明不用序列化的成员域</li>
+<li>try ：尝试一个可能抛出异常的程序块</li>
+<li>void ：声明当前成员方法没有返回值</li>
+<li>volatile ：表明两个或者多个变量必须同步地发生变化</li>
+<li>while ：用在循环结构中</li>
+</ul>
+<h3 id="private、default、protected、public的作用范围"><a href="#private、default、protected、public的作用范围" class="headerlink" title="private、default、protected、public的作用范围"></a>private、default、protected、public的作用范围</h3><pre><code>private:表示私有，只有自己的类能访问。----子类能继承，但是不能调用。
 default：表示没有修饰符修饰（即默认），只有同一个包的类能访问。
-protectd：表示可以被同一个包的类以及其它包的子类访问。
-public：表示可以被该项目中的所有包的所有类访问。</code></pre><p>访问级别 访问控制修饰符       同类         同包         子类        不同包（包括子类和非子类）</p>
-<pre><code>公开 public    √     √    √     √
-受保护 protected     √     √    √    ×
-默认 没有修饰符       √    √    ×    ×
-私有 private             √     ×    ×    ×</code></pre>
-                            <hr>
-                        </div>
-                        <br>
-                        <div>
-                            
-                            <p>
-                                <i class="iconfont icon-tag"></i>
-                                
-                                    <a class="hover-with-bg" href="/tags/Java">Java</a>
-                                
-                            </p>
-                            
-                                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <div class="d-none d-lg-block col-lg-2 toc-container">
+protected：表示可以被同一个包的类以及其它包的子类访问。
+public：表示可以被该项目中的所有包的所有类访问。</code></pre><table>
+<thead>
+<tr>
+<th>访问级别</th>
+<th align="right">访问控制修饰符</th>
+<th align="right">同类</th>
+<th align="right">同包</th>
+<th align="right">子类</th>
+<th align="center">不同包(包括子类和非子类)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>公开</td>
+<td align="right">public</td>
+<td align="right">√</td>
+<td align="right">√</td>
+<td align="right">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td>受保护</td>
+<td align="right">protected</td>
+<td align="right">√</td>
+<td align="right">√</td>
+<td align="right">√</td>
+<td align="center">×</td>
+</tr>
+<tr>
+<td>默认</td>
+<td align="right">没有修饰符</td>
+<td align="right">√</td>
+<td align="right">√</td>
+<td align="right">×</td>
+<td align="center">×</td>
+</tr>
+<tr>
+<td>私有</td>
+<td align="right">private</td>
+<td align="right">√</td>
+<td align="right">×</td>
+<td align="right">×</td>
+<td align="center">×</td>
+</tr>
+</tbody></table>
+<h2 id="数据类型："><a href="#数据类型：" class="headerlink" title="数据类型："></a>数据类型：</h2><ul>
+<li>byte: <pre><code>取值范围：-2^7~2^7-1
+所占空间：1个字节，8位</code></pre></li>
+<li>short:<pre><code>取值范围：-2^15~2^15-1
+所占空间：2个字节，16位</code></pre></li>
+<li>int:<pre><code>取值范围：-2^31~2^31-1
+所占空间：4个字节，32位</code></pre></li>
+<li>long:<pre><code>取值范围：-2^63~2^63-1
+所占空间：8个字节，64位</code></pre></li>
+<li>float:<pre><code>单精度32位
+所占空间：4个字节</code></pre></li>
+<li>double:<pre><code>双精度64位
+所占空间：8个字节</code></pre></li>
+<li>char: <pre><code>所占空间：2个字节</code></pre></li>
+<li>boolean:<pre><code>所占空间：1/8个字节，1bit</code></pre></li>
+</ul>
+
+            <hr>
+          </div>
+          <br>
+          <div>
             
+              <p>
+                <i class="iconfont icon-inbox"></i>
+                
+                  <a class="hover-with-bg" href="/categories/%E5%9F%BA%E7%A1%80">基础</a>
+                  &nbsp;
+                
+              </p>
+            
+            <p>
+              <i class="iconfont icon-tag"></i>
+              
+                <a class="hover-with-bg" href="/tags/Java">Java</a>
+              
+                <a class="hover-with-bg" href="/tags/%E5%9F%BA%E7%A1%80">基础</a>
+              
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
   <div id="toc">
-    <p class="h4"><i class="far fa-list-alt"></i> Toc:</p> 
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
     <div id="tocbot"></div>
   </div>
 
-        </div>
     </div>
+  </div>
 </div>
 
 <!-- custom -->
@@ -210,71 +292,154 @@ public：表示可以被该项目中的所有包的所有类访问。</code></pr
 
 <!-- Comments -->
 <div class="col-lg-7 mx-auto nopadding-md">
-    <div class="container comments mx-auto" id="comments">
-        
-    </div>
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      <div class="disqus" style="width:100%">
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_shortname = '';
+    var disqus_config = function () {
+      this.page.url = 'http://yoursite.com/2019/09/18/java-基础01/';
+      this.page.identifier = '/2019/09/18/java-基础01/';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.type = 'text/javascript';
+      s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow noopener">comments
+      powered by Disqus.</a></noscript>
 </div>
     
-</main>
+  </div>
+</div>
 
-<footer class="mt-5">
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
   <div class="text-center py-3">
     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
     <i class="iconfont icon-love"></i>
-    <a href="https://github.com/0x2e/Material-T" target="_blank" rel="nofollow noopener"> <b>Material-T</b></a>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
     <br>
+    
+      <a href="http://beian.miit.gov.cn/" target="_blank"
+         rel="nofollow noopener">京ICP证123456号</a>
+      
+        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12345678"
+           target="_blank" rel="nofollow noopener"> | 京公网安备12345678号</a>
+      
     
   </div>
 </footer>
 
-  <!-- SCRIPTS -->
-  <script src="/lib/mdbootstrap/js/jquery-3.4.1.min.js"></script>
-  <script src="/lib/mdbootstrap/js/popper.min.js"></script>
-  <script src="/lib/mdbootstrap/js/bootstrap.min.js?v=4.3.1"></script>
-  <script src="/lib/mdbootstrap/js/mdb.min.js?v=4.8.7"></script>
-  <script src="/lib/nprogress/nprogress.min.js?v=0.2.0"></script>
-  <script src="/js/main.js"></script>
+<!-- SCRIPTS -->
+<script src="/lib/jquery/jquery.min.js" ></script>
+<script src="/lib/popper/popper.min.js" ></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+  <script src="/js/lazyload.js" ></script>
+
+
   
-    
-      <script src="/lib/tocbot/tocbot.min.js?v=4.7.0"></script>
-    
-    <script src="/js/post.js"></script>
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
   
-  
-    <script src="/lib/prettify/prettify.min.js?v=0.1.0"></script>
-    <script>
-      $(document).ready(function(){
-        $('pre').addClass('prettyprint linenums');
-        prettyPrint();
-      })
-    </script>
-  
-  
-    <script src="/lib/typed/typed.min.js?v=2.0.9"></script>
-    <script>
-        var typed = new Typed('#subtitle', {
-          strings: [
-            '  ',
-            "java-基础01&nbsp;",
-        ],
-        cursorChar: "_",
-        typeSpeed: 70,
-        startDelay: 300, //开始之前延迟300毫秒
-        loop: false,
-        });
-        $(".typed-cursor").addClass("h2");
-    </script>
-  
-  
-    <script src="/lib/anchor/anchor.min.js?v=4.2.0"></script>
-    <script>
-      anchors.options = {
-        placement: "right",
-        visible: "false",
-        
-      };
-      anchors.add(".post-content > h1,h2,h3,h4,h5,h6");
-    </script>
-  
+  <script src="/js/post.js" ></script>
+
+
+  <script src="/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+  <script src="/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "java-基础01&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+  <script src="/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
 </body>
 </html>

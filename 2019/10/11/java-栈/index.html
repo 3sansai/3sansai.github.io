@@ -14,7 +14,7 @@
   <meta name="description" content="Mysql / Java / Js / WxChartWeb">
   <meta name="author" content="3sansai">
   <meta name="keywords" content="Dream">
-  <title>页面走丢啦~ ~ 3sansai</title>
+  <title>java-栈 ~ 3sansai</title>
   <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
@@ -40,7 +40,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -111,6 +111,9 @@
             </span>
 
             
+              <br>
+              <p>星期五, 十月 11日 2019, 9:53 上午</p>
+            
           </div>
 
           
@@ -123,13 +126,131 @@
     
       
 
-<script>
-  function redirect() {
-    location.href = "/";
-  }
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto">
+          <div class="markdown-body">
+            <h2 id="Java简单代码实现"><a href="#Java简单代码实现" class="headerlink" title="Java简单代码实现"></a>Java简单代码实现</h2><pre><code>/**
+* desc : 栈的数组实现
+*/
+public class Stack {
 
-  //setTimeout(redirect, 3000)
-</script>
+    /**
+    * 栈的一些基础属性
+    */
+    private Object[] value;
+    private int top = -1;
+    private int size;
+
+    /**
+    * 构造方法
+    * @param size
+    */
+    public Stack(int size) {
+        value = new Object[size];
+        this.size = size;
+    }
+
+    /**
+    * 判断栈是否为空
+    * @return
+    */
+    public boolean isEmpty() {
+        return top == 0;
+    }
+
+    /**
+    * 栈添加元素
+    * @param val
+    */
+    public void push(Object val) {
+        if (top == size) {
+            throw new StackOverflowError();
+        }
+
+        value[++top] = val;
+    }
+
+    /**
+    * 栈取出元素
+    * @return
+    */
+    public Object pop() {
+        if (top &lt; 0) {
+            throw new EmptyStackException();
+        }
+
+        Object obj = value[top];
+        top--;
+        return obj;
+    }
+}</code></pre>
+            <hr>
+          </div>
+          <br>
+          <div>
+            
+            <p>
+              <i class="iconfont icon-tag"></i>
+              
+                <a class="hover-with-bg" href="/tags/Java">Java</a>
+              
+                <a class="hover-with-bg" href="/tags/%E5%9F%BA%E7%A1%80">基础</a>
+              
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      <div class="disqus" style="width:100%">
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_shortname = '';
+    var disqus_config = function () {
+      this.page.url = 'http://yoursite.com/2019/10/11/java-栈/';
+      this.page.identifier = '/2019/10/11/java-栈/';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.type = 'text/javascript';
+      s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow noopener">comments
+      powered by Disqus.</a></noscript>
+</div>
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -190,6 +311,11 @@
   <script src="/js/lazyload.js" ></script>
 
 
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
   <script src="/lib/prettify/prettify.min.js" ></script>
   <script>
@@ -205,7 +331,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Page not found&nbsp;",
+        "java-栈&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

@@ -14,7 +14,7 @@
   <meta name="description" content="Mysql / Java / Js / WxChartWeb">
   <meta name="author" content="3sansai">
   <meta name="keywords" content="Dream">
-  <title>页面走丢啦~ ~ 3sansai</title>
+  <title>堆排序 ~ 3sansai</title>
   <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
@@ -40,7 +40,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -111,6 +111,9 @@
             </span>
 
             
+              <br>
+              <p>星期五, 十月 11日 2019, 9:53 上午</p>
+            
           </div>
 
           
@@ -123,13 +126,130 @@
     
       
 
-<script>
-  function redirect() {
-    location.href = "/";
-  }
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto">
+          <div class="markdown-body">
+            <h2 id="堆排序定义"><a href="#堆排序定义" class="headerlink" title="堆排序定义"></a>堆排序定义</h2><h3 id="堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。"><a href="#堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。" class="headerlink" title="堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。"></a>堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。</h3><h3 id="堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。"><a href="#堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。" class="headerlink" title="堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。"></a>堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。</h3><h2 id="Java代码和详细注释如下："><a href="#Java代码和详细注释如下：" class="headerlink" title="Java代码和详细注释如下："></a>Java代码和详细注释如下：</h2><pre><code>public class HeapSort {
+    public static void main(String[] args) {
+        int[] arr = {7, 6, 7, 11, 5, 12, 3, 0, 1};
+        System.out.println(&quot;排序前：&quot; + Arrays.toString(arr));
+        sort(arr);
+        System.out.println(&quot;排序前：&quot; + Arrays.toString(arr));
+    }
+    public static void sort(int[] arr) {
+        //1.构建大顶堆
+        for (int i = arr.length / 2 - 1; i &gt;= 0; i--) {
+            //从第一个非叶子结点从下至上，从右至左调整结构
+            adjustHeap(arr, i, arr.length);
+        }
+        //2.调整堆结构+交换堆顶元素与末尾元素
+        for (int j = arr.length - 1; j &gt; 0; j--) {
+            swap(arr, 0, j);//将堆顶元素与末尾元素进行交换
+            adjustHeap(arr, 0, j);//重新对堆进行调整
+        }
+    }
+    /**
+    * 调整大顶堆（仅是调整过程，建立在大顶堆已构建的基础上）
+    *
+    * @param arr
+    * @param i
+    * @param length
+    */
+    public static void adjustHeap(int[] arr, int i, int length) {
+        int temp = arr[i];//先取出当前元素i
+        for (int k = i * 2 + 1; k &lt; length; k = k * 2 + 1) {//从i结点的左子结点开始，也就是2i+1处开始
+            if (k + 1 &lt; length &amp;&amp; arr[k] &lt; arr[k + 1]) {//如果左子结点小于右子结点，k指向右子结点
+                k++;
+            }
+            if (arr[k] &gt; temp) {//如果子节点大于父节点，将子节点值赋给父节点（不用进行交换）
+                arr[i] = arr[k];
+                i = k;
+            } else {
+                break;
+            }
+        }
+        arr[i] = temp;//将temp值放到最终的位置
+   }
+    /**
+    * 交换元素
+    *
+    * @param arr
+    * @param a
+    * @param b
+    */
+    public static void swap(int[] arr, int a, int b) {
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+}</code></pre>
+            <hr>
+          </div>
+          <br>
+          <div>
+            
+            <p>
+              <i class="iconfont icon-tag"></i>
+              
+                <a class="hover-with-bg" href="/tags/Java">Java</a>
+              
+                <a class="hover-with-bg" href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95">排序算法</a>
+              
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
 
-  //setTimeout(redirect, 3000)
-</script>
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      <div class="disqus" style="width:100%">
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_shortname = '';
+    var disqus_config = function () {
+      this.page.url = 'http://yoursite.com/2019/10/11/堆排序/';
+      this.page.identifier = '/2019/10/11/堆排序/';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.type = 'text/javascript';
+      s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow noopener">comments
+      powered by Disqus.</a></noscript>
+</div>
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -190,6 +310,11 @@
   <script src="/js/lazyload.js" ></script>
 
 
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
   <script src="/lib/prettify/prettify.min.js" ></script>
   <script>
@@ -205,7 +330,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Page not found&nbsp;",
+        "堆排序&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
