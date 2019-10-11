@@ -133,7 +133,9 @@
       <div class="py-5 z-depth-3" id="board">
         <div class="post-content mx-auto">
           <div class="markdown-body">
-            <h2 id="Java简单代码实现"><a href="#Java简单代码实现" class="headerlink" title="Java简单代码实现"></a>Java简单代码实现</h2><pre><code>/**
+            <h2 id="栈的概念"><a href="#栈的概念" class="headerlink" title="栈的概念"></a>栈的概念</h2><pre><code>栈是一种只允许在一端进行插入或删除的线性表。栈的操作端通常被称为栈顶，另一端被称为栈底。
+栈的插入操作称作进栈（压栈|push）；栈删除操作称为出栈（弹栈|pop）</code></pre><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><pre><code>栈的特点是先进后出，就像超市货架上的货物，先放上去的压在下面，后放上去的在上面。</code></pre><h2 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h2><pre><code>顺序存储的栈称作顺序栈（常用的是数组实现），链式存储的栈称作链式栈</code></pre><h2 id="Java简单代码实现"><a href="#Java简单代码实现" class="headerlink" title="Java简单代码实现"></a>Java简单代码实现</h2><p> 我们可以围绕栈的4个元素来实现栈：<br> 状态：是否栈空；是否栈满。<br> 操作：压栈push;进栈pop。</p>
+<pre><code>/**
 * desc : 栈的数组实现
 */
 public class Stack {

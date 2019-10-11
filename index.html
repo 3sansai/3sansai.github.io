@@ -145,7 +145,9 @@
           
         
         <div class="index-excerpt" >
-          <div class="index-text mb-1">Java简单代码实现/**
+          <div class="index-text mb-1">概念队列是数据结构中比较重要的一种类型（是一种数据结构），它支持 FIFO，尾部添加、头部删除（先进队列的元素先出队列）特点队列的特点就是先进先出，和生活中的排队等候差不多存储结构队列有两种：
+单队列 ： 就是常见的队列，每次添加元素时，是添加对队尾。
+循环队列（暂时没看到）Java简单代码实现/**
 * desc : 队列的数组实现
 */
 public class Queue {
@@ -163,15 +165,7 @@ public class Queue {
         if (tail == length) {
             tail = 0;
         }
-        queue[tail++] = obj;
-    }
-
-    public Object deQueue() {
-        if (queue[head] == null) {
-            return null;
-        }
-
-        </div>
+       </div>
         </div>
       </a>
 
@@ -203,7 +197,9 @@ public class Queue {
           
         
         <div class="index-excerpt" >
-          <div class="index-text mb-1">Java简单代码实现/**
+          <div class="index-text mb-1">栈的概念栈是一种只允许在一端进行插入或删除的线性表。栈的操作端通常被称为栈顶，另一端被称为栈底。
+栈的插入操作称作进栈（压栈|push）；栈删除操作称为出栈（弹栈|pop）特点栈的特点是先进后出，就像超市货架上的货物，先放上去的压在下面，后放上去的在上面。存储结构顺序存储的栈称作顺序栈（常用的是数组实现），链式存储的栈称作链式栈Java简单代码实现 我们可以围绕栈的4个元素来实现栈： 状态：是否栈空；是否栈满。 操作：压栈push;进栈pop。
+/**
 * desc : 栈的数组实现
 */
 public class Stack {
@@ -221,23 +217,7 @@ public class Stack {
     */
     public Stack(int size) {
         value = new Object[size];
-        this.size = size;
-    }
-
-    /**
-    * 判断栈是否为空
-    * @return
-    */
-    public boolean isEmpty() {
-        return top == 0;
-    }
-
-    /**
-    * 栈添加元素
-    * @param val
-    */
-    public void push(Object val) {
-        if (t</div>
+        this.siz</div>
         </div>
       </a>
 
