@@ -11,6 +11,12 @@
     <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><pre><code>队列是数据结构中比较重要的一种类型（是一种数据结构），它支持 FIFO，尾部添加、头部删除（先进队列的元素先出队列）</code></pre><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><pre><code>队列的特点就是先进先出，和生活中的排队等候差不多</code></pre><h2 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h2><pre><code>队列有两种：单队列 ： 就是常见的队列，每次添加元素时，是添加对队尾。循环队列（暂时没看到）</code></pre><h2 id="Java简单代码实现"><a href="#Java简单代码实现" class="headerlink" title="Java简单代码实现"></a>Java简单代码实现</h2><pre><code>/*** desc : 队列的数组实现*/public class Queue {    private Object[] queue;    private int length;    private int head = 0;    private int tail = 0;    public Queue(int len) {        this.length = len;        queue = new Object[len];    }    public void enQueue(Object obj) {        if (tail == length) {            tail = 0;        }        queue[tail++] = obj;    }    public Object deQueue() {        if (queue[head] == null) {            return null;        }        Object temp = queue[head];        if (head == length) {            head = 0;        } else {            head++;        }        return temp;    }}</code></pre>]]></content>
     
     
+    <categories>
+      
+      <category>基础</category>
+      
+    </categories>
+    
     
     <tags>
       
@@ -32,6 +38,12 @@
     <content type="html"><![CDATA[<h2 id="栈的概念"><a href="#栈的概念" class="headerlink" title="栈的概念"></a>栈的概念</h2><pre><code>栈是一种只允许在一端进行插入或删除的线性表。栈的操作端通常被称为栈顶，另一端被称为栈底。栈的插入操作称作进栈（压栈|push）；栈删除操作称为出栈（弹栈|pop）</code></pre><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><pre><code>栈的特点是先进后出，就像超市货架上的货物，先放上去的压在下面，后放上去的在上面。</code></pre><h2 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h2><pre><code>顺序存储的栈称作顺序栈（常用的是数组实现），链式存储的栈称作链式栈</code></pre><h2 id="Java简单代码实现"><a href="#Java简单代码实现" class="headerlink" title="Java简单代码实现"></a>Java简单代码实现</h2><p> 我们可以围绕栈的4个元素来实现栈：<br> 状态：是否栈空；是否栈满。<br> 操作：压栈push;进栈pop。</p><pre><code>/*** desc : 栈的数组实现*/public class Stack {    /**    * 栈的一些基础属性    */    private Object[] value;    private int top = -1;    private int size;    /**    * 构造方法    * @param size    */    public Stack(int size) {        value = new Object[size];        this.size = size;    }    /**    * 判断栈是否为空    * @return    */    public boolean isEmpty() {        return top == 0;    }    /**    * 栈添加元素    * @param val    */    public void push(Object val) {        if (top == size) {            throw new StackOverflowError();        }        value[++top] = val;    }    /**    * 栈取出元素    * @return    */    public Object pop() {        if (top &lt; 0) {            throw new EmptyStackException();        }        Object obj = value[top];        top--;        return obj;    }}</code></pre>]]></content>
     
     
+    <categories>
+      
+      <category>基础</category>
+      
+    </categories>
+    
     
     <tags>
       
@@ -50,8 +62,14 @@
     <link href="undefined2019/10/11/%E5%A0%86%E6%8E%92%E5%BA%8F/"/>
     <url>2019/10/11/%E5%A0%86%E6%8E%92%E5%BA%8F/</url>
     
-    <content type="html"><![CDATA[<h2 id="堆排序定义"><a href="#堆排序定义" class="headerlink" title="堆排序定义"></a>堆排序定义</h2><h3 id="堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。"><a href="#堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。" class="headerlink" title="堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。"></a>堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。</h3><h3 id="堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。"><a href="#堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。" class="headerlink" title="堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。"></a>堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。</h3><h2 id="Java代码和详细注释如下："><a href="#Java代码和详细注释如下：" class="headerlink" title="Java代码和详细注释如下："></a>Java代码和详细注释如下：</h2><pre><code>public class HeapSort {    public static void main(String[] args) {        int[] arr = {7, 6, 7, 11, 5, 12, 3, 0, 1};        System.out.println(&quot;排序前：&quot; + Arrays.toString(arr));        sort(arr);        System.out.println(&quot;排序前：&quot; + Arrays.toString(arr));    }    public static void sort(int[] arr) {        //1.构建大顶堆        for (int i = arr.length / 2 - 1; i &gt;= 0; i--) {            //从第一个非叶子结点从下至上，从右至左调整结构            adjustHeap(arr, i, arr.length);        }        //2.调整堆结构+交换堆顶元素与末尾元素        for (int j = arr.length - 1; j &gt; 0; j--) {            swap(arr, 0, j);//将堆顶元素与末尾元素进行交换            adjustHeap(arr, 0, j);//重新对堆进行调整        }    }    /**    * 调整大顶堆（仅是调整过程，建立在大顶堆已构建的基础上）    *    * @param arr    * @param i    * @param length    */    public static void adjustHeap(int[] arr, int i, int length) {        int temp = arr[i];//先取出当前元素i        for (int k = i * 2 + 1; k &lt; length; k = k * 2 + 1) {//从i结点的左子结点开始，也就是2i+1处开始            if (k + 1 &lt; length &amp;&amp; arr[k] &lt; arr[k + 1]) {//如果左子结点小于右子结点，k指向右子结点                k++;            }            if (arr[k] &gt; temp) {//如果子节点大于父节点，将子节点值赋给父节点（不用进行交换）                arr[i] = arr[k];                i = k;            } else {                break;            }        }        arr[i] = temp;//将temp值放到最终的位置   }    /**    * 交换元素    *    * @param arr    * @param a    * @param b    */    public static void swap(int[] arr, int a, int b) {        int temp = arr[a];        arr[a] = arr[b];        arr[b] = temp;    }}</code></pre>]]></content>
+    <content type="html"><![CDATA[<h2 id="堆排序定义"><a href="#堆排序定义" class="headerlink" title="堆排序定义"></a>堆排序定义</h2><h4 id="堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。"><a href="#堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。" class="headerlink" title="堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。"></a>堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。</h4><h4 id="堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。"><a href="#堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。" class="headerlink" title="堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。"></a>堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。</h4><h2 id="Java代码和详细注释如下："><a href="#Java代码和详细注释如下：" class="headerlink" title="Java代码和详细注释如下："></a>Java代码和详细注释如下：</h2><pre><code>public class HeapSort {    public static void main(String[] args) {        int[] arr = {7, 6, 7, 11, 5, 12, 3, 0, 1};        System.out.println(&quot;排序前：&quot; + Arrays.toString(arr));        sort(arr);        System.out.println(&quot;排序前：&quot; + Arrays.toString(arr));    }    public static void sort(int[] arr) {        //1.构建大顶堆        for (int i = arr.length / 2 - 1; i &gt;= 0; i--) {            //从第一个非叶子结点从下至上，从右至左调整结构            adjustHeap(arr, i, arr.length);        }        //2.调整堆结构+交换堆顶元素与末尾元素        for (int j = arr.length - 1; j &gt; 0; j--) {            swap(arr, 0, j);//将堆顶元素与末尾元素进行交换            adjustHeap(arr, 0, j);//重新对堆进行调整        }    }    /**    * 调整大顶堆（仅是调整过程，建立在大顶堆已构建的基础上）    *    * @param arr    * @param i    * @param length    */    public static void adjustHeap(int[] arr, int i, int length) {        int temp = arr[i];//先取出当前元素i        for (int k = i * 2 + 1; k &lt; length; k = k * 2 + 1) {//从i结点的左子结点开始，也就是2i+1处开始            if (k + 1 &lt; length &amp;&amp; arr[k] &lt; arr[k + 1]) {//如果左子结点小于右子结点，k指向右子结点                k++;            }            if (arr[k] &gt; temp) {//如果子节点大于父节点，将子节点值赋给父节点（不用进行交换）                arr[i] = arr[k];                i = k;            } else {                break;            }        }        arr[i] = temp;//将temp值放到最终的位置   }    /**    * 交换元素    *    * @param arr    * @param a    * @param b    */    public static void swap(int[] arr, int a, int b) {        int temp = arr[a];        arr[a] = arr[b];        arr[b] = temp;    }}</code></pre>]]></content>
     
+    
+    <categories>
+      
+      <category>基础</category>
+      
+    </categories>
     
     
     <tags>
@@ -74,8 +92,16 @@
     <content type="html"><![CDATA[<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><pre><code>冒泡排序是所有排序算法中最基础的排序算法，冒泡排序十分稳定，但是当数据量庞大时，冒泡排序的耗时是最长的，冒泡排序的缺点就是需要消耗大量时间，优点是稳定。</code></pre><h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><pre><code>比较相邻的元素。如果第一个比第二个大，就交换他们两个。对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。针对所有的元素重复以上的步骤，除了最后一个。持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</code></pre><h2 id="Java代码简单实现"><a href="#Java代码简单实现" class="headerlink" title="Java代码简单实现"></a>Java代码简单实现</h2><pre><code> public static void main(String[] args) {    //冒泡排序算法    int[] numbers=new int[]{1,5,8,2,3,9,4};    int i,j;    for(i=0;i&lt;numbers.length;i++)    {        for(j=0;j&lt;numbers.length-1-i;j++)        {            if(numbers[j]&lt;numbers[j+1])            {                int temp=numbers[j];                numbers[j]=numbers[j+1];                numbers[j+1]=temp;            }        }    }    System.out.println(&quot;排序后的结果是:&quot;);    for(i=0;i&lt;numbers.length;i++)        System.out.print(numbers[i]+&quot; &quot;);}</code></pre>]]></content>
     
     
+    <categories>
+      
+      <category>基础</category>
+      
+    </categories>
+    
     
     <tags>
+      
+      <tag>Java</tag>
       
       <tag>排序算法</tag>
       
@@ -209,19 +235,6 @@
       <tag>Linux</tag>
       
     </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="undefined2019/09/03/hello-world/"/>
-    <url>2019/09/03/hello-world/</url>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    
     
   </entry>
   
