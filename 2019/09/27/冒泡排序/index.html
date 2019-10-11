@@ -133,7 +133,29 @@
       <div class="py-5 z-depth-3" id="board">
         <div class="post-content mx-auto">
           <div class="markdown-body">
-            
+            <h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><pre><code>冒泡排序是所有排序算法中最基础的排序算法，冒泡排序十分稳定，但是当数据量庞大时，冒泡排序的耗时是最长的，冒泡排序的缺点就是需要消耗大量时间，优点是稳定。</code></pre><h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><pre><code>比较相邻的元素。如果第一个比第二个大，就交换他们两个。
+对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。
+针对所有的元素重复以上的步骤，除了最后一个。
+持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</code></pre><h2 id="Java代码简单实现"><a href="#Java代码简单实现" class="headerlink" title="Java代码简单实现"></a>Java代码简单实现</h2><pre><code> public static void main(String[] args) {
+    //冒泡排序算法
+    int[] numbers=new int[]{1,5,8,2,3,9,4};
+    int i,j;
+    for(i=0;i&lt;numbers.length;i++)
+    {
+        for(j=0;j&lt;numbers.length-1-i;j++)
+        {
+            if(numbers[j]&lt;numbers[j+1])
+            {
+                int temp=numbers[j];
+                numbers[j]=numbers[j+1];
+                numbers[j+1]=temp;
+            }
+        }
+    }
+    System.out.println(&quot;排序后的结果是:&quot;);
+    for(i=0;i&lt;numbers.length;i++)
+        System.out.print(numbers[i]+&quot; &quot;);
+}</code></pre>
             <hr>
           </div>
           <br>
