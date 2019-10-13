@@ -138,6 +138,69 @@
     
     
     <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/09/17/linux-常用语法/">
+        <p class="h4 index-header">linux-常用语法</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">规范: 
+
+windows 的 jdk 安装位置不能有中文, 不能有空格. 
+建立的项目路径中不能有中文, 不能有空格.
+虚拟机中均使用 root 权限.
+虚拟机中安装路径统一
+虚拟机密码简单[为了方便] 
+使用统一的版本.  
+
+注意：
+adduser 用户名
+passwd 用户名(给指定用户添加密码)
+ cat /etc/passwd  查看所有用户使用sftp:
+注意你操作的是本地环境 还是远程linux环境
+命令不同   l--&gt;local
+上传put  从哪里上传到哪里
+下载get  从哪里下载到哪里
+以及操作的文件是什么
+（一般用rz从电脑本地拉取）安装虚拟机（克隆）
+在启动前先生成MAC地址
+注意网卡的设置
+删除70-persistent-net.rules目录，其中的mac地址也会被删除，重启后会自动重新生成
+rm -rf /etc/udev/rules..d/70-persistent-net.rules
+修改网卡设置
+vim /etc/sysconfig/network-scripts/ifcfg-eth0
+修改主机的名字
+vi /etc/sysconfig/</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-09-17&nbsp;&nbsp;
+        
+        
+          <i class="iconfont icon-inbox"></i>
+          
+            <a href="/categories/%E5%9F%BA%E7%A1%80">基础</a>&nbsp;
+          &nbsp;
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/%E8%AF%AD%E6%B3%95">语法</a>&nbsp;
+          
+            <a href="/tags/Linux">Linux</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
       <a href="/2019/09/06/linux-基础语法/">
         <p class="h4 index-header">linux-基础语法</p>
         

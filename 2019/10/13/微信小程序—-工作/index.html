@@ -14,7 +14,7 @@
   <meta name="description" content="Mysql / Java / Js / WxChartWeb">
   <meta name="author" content="3sansai">
   <meta name="keywords" content="Dream">
-  <title>分类 - 工作 ~ 3sansai</title>
+  <title>微信小程序—-工作 ~ 3sansai</title>
   <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
@@ -40,7 +40,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -111,6 +111,9 @@
             </span>
 
             
+              <br>
+              <p>星期日, 十月 13日 2019, 7:46 晚上</p>
+            
           </div>
 
           
@@ -121,39 +124,96 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 2 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2019</p>
-    
-    <a href="/2019/10/13/微信小程序—-工作/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">微信小程序—-工作</span>
-      <span style="float: right;">10-13</span>
-    </a>
-  
-    
-    <a href="/2019/10/12/MySQL-工作/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">MySQL-工作</span>
-      <span style="float: right;">10-12</span>
-    </a>
-  
-</div>
-              </div>
-            </div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto">
+          <div class="markdown-body">
+            <h2 id="小程序开发小结"><a href="#小程序开发小结" class="headerlink" title="小程序开发小结"></a>小程序开发小结</h2><p>微信小程序的开发是现在开发的一种潮流，很多公司都会为自己的产品打造一看小程序，方便用户使用，更好的推广自己。我在这里就不吐槽微信的开发文档有多烂，审核机制有多烂了。撇开细节上的用户体验，小程序开发也是有有点的，相较于普通的web开发，小程序的开发上手快，语法简单（基本沿用原生的JS和html语法）。缺点就是配合服务端需要已经部署的服务，调试起来存在应困难。因为审核的原因，无法在问题解决后及时上线。</p>
+<h2 id="开发的坑"><a href="#开发的坑" class="headerlink" title="开发的坑"></a>开发的坑</h2><p>上面吐槽完了，下面记录一些我再小程序web开发过程中的问题。</p>
+<ul>
+<li><p>进入小程序的页面设定问题，小程序提交审核之前一定要仔细检查app.json这个文件，看仔细，是否设定好了小程序进入页面。</p>
+</li>
+<li><p>调试接口问题，小程序的调用接口必须是https请求的接口，所以开发之前要配置好接口。</p>
+</li>
+<li><p>微信密钥的问题，应该是所有做小程序服务开发都要注意的东西，密钥决定了服务与哪个小程序web连接，密钥只会在生成时可见，所以第一次生成一定要保存起来，忘了或者丢失后就要重新生成。</p>
+</li>
+</ul>
+<p>持续更新开发小程序遇到的坑…………..</p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            
+              <p>
+                <i class="iconfont icon-inbox"></i>
+                
+                  <a class="hover-with-bg" href="/categories/%E5%B7%A5%E4%BD%9C">工作</a>
+                  &nbsp;
+                
+              </p>
+            
+            <p>
+              <i class="iconfont icon-tag"></i>
+              
+                <a class="hover-with-bg" href="/tags/%E5%BE%AE%E4%BF%A1">微信</a>
+              
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      <div class="disqus" style="width:100%">
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_shortname = '';
+    var disqus_config = function () {
+      this.page.url = 'http://yoursite.com/2019/10/13/微信小程序—-工作/';
+      this.page.identifier = '/2019/10/13/微信小程序—-工作/';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.type = 'text/javascript';
+      s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow noopener">comments
+      powered by Disqus.</a></noscript>
+</div>
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -207,6 +267,11 @@
   <script src="/js/lazyload.js" ></script>
 
 
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
   <script src="/lib/prettify/prettify.min.js" ></script>
   <script>
@@ -222,7 +287,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "分类 - 工作&nbsp;",
+        "微信小程序—-工作&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
