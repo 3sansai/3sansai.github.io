@@ -26,16 +26,6 @@
   <link rel="stylesheet" href="/css/main.css">
 
   
-  <script>
-    var _hmt = _hmt || [];
-    (function () {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?[object Object]";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
 </head>
 
 
@@ -138,6 +128,56 @@
     
     
     <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/10/14/插入排序/">
+        <p class="h4 index-header">插入排序</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">插入排序理解插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。这个排序其实和我们生活中打扑克牌是一样的，我们先整理好手上的牌，然后将后摸的牌插入手牌中合适的位置。
+原理
+从第一个元素开始，该元素可以认为已经被排序；
+取出下一个元素，在已经排序的元素序列中从后向前扫描；
+如果该元素（已排序）大于新元素，将该元素移到下一位置；
+重复步骤3，直到找到已排序的元素小于或者等于新元素的位置；
+将新元素插入到该位置后；重复步骤2~5。
+
+Java简单代码示例   public static int[] insertionSort(int[] array) {
+    if (array.length == 0)//判断数组长度是否为零
+        return array;
+    int current;//临时变量
+    for (int i = 0; i &lt; array.length - 1; i++) {//遍历数组
+        current = ar</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-14&nbsp;&nbsp;
+        
+        
+          <i class="iconfont icon-inbox"></i>
+          
+            <a href="/categories/%E5%9F%BA%E7%A1%80">基础</a>&nbsp;
+          &nbsp;
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Java">Java</a>&nbsp;
+          
+            <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95">排序算法</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
       <a href="/2019/10/13/微信小程序—-工作/">
         <p class="h4 index-header">微信小程序—-工作</p>
         
@@ -208,9 +248,9 @@
         
           <i class="iconfont icon-tag"></i>
           
-            <a href="/tags/MySQL">MySQL</a>&nbsp;
-          
             <a href="/tags/%E5%9F%BA%E7%A1%80">基础</a>&nbsp;
+          
+            <a href="/tags/MySQL">MySQL</a>&nbsp;
           
         
       </div>
@@ -306,9 +346,9 @@ public class Queue {
         
           <i class="iconfont icon-tag"></i>
           
-            <a href="/tags/%E5%9F%BA%E7%A1%80">基础</a>&nbsp;
-          
             <a href="/tags/Java">Java</a>&nbsp;
+          
+            <a href="/tags/%E5%9F%BA%E7%A1%80">基础</a>&nbsp;
           
         
       </div>
@@ -363,9 +403,9 @@ public class Stack {
         
           <i class="iconfont icon-tag"></i>
           
-            <a href="/tags/%E5%9F%BA%E7%A1%80">基础</a>&nbsp;
-          
             <a href="/tags/Java">Java</a>&nbsp;
+          
+            <a href="/tags/%E5%9F%BA%E7%A1%80">基础</a>&nbsp;
           
         
       </div>
@@ -383,14 +423,14 @@ public class Stack {
           
         
         <div class="index-excerpt" >
-          <div class="index-text mb-1">堆排序定义堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。Java代码和详细注释如下：public class HeapSort {
+          <div class="index-text mb-1">堆排序堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。Java代码和详细注释如下：public class HeapSort {
     public static void main(String[] args) {
         int[] arr = {7, 6, 7, 11, 5, 12, 3, 0, 1};
         System.out.println(&quot;排序前：&quot; + Arrays.toString(arr));
         sort(arr);
         System.out.println(&quot;排序前：&quot; + Arrays.toString(arr));
     }
-    public static void sort(int[] arr</div>
+    public static void sort(int[] arr) </div>
         </div>
       </a>
 
@@ -494,9 +534,9 @@ public class Stack {
         
           <i class="iconfont icon-tag"></i>
           
-            <a href="/tags/%E5%9F%BA%E7%A1%80">基础</a>&nbsp;
-          
             <a href="/tags/Java">Java</a>&nbsp;
+          
+            <a href="/tags/%E5%9F%BA%E7%A1%80">基础</a>&nbsp;
           
         
       </div>
@@ -550,60 +590,9 @@ f</div>
         
           <i class="iconfont icon-tag"></i>
           
-            <a href="/tags/%E5%9F%BA%E7%A1%80">基础</a>&nbsp;
-          
             <a href="/tags/Java">Java</a>&nbsp;
           
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/09/18/linux-权限/">
-        <p class="h4 index-header">linux-权限</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">常用的文件权限：
-444 r--r--r--
-600 rw-------
-644 rw-r--r--
-666 rw-rw-rw-
-700 rwx------
-744 rwxr--r--
-755 rwxr-xr-x
-777 rwxrwxrwx从左至右，1-3位数字代表文件所有者的权限，4-6位数字代表同组用户的权限，7-9数字代表其他用户的权限。而具体的权限是由数字来表示的，读取的权限等于4，用r表示；写入的权限等于2，用w表示；执行的权限等于1，用x表示；通过4、2、1的组合，得到以下几种权限：0（没有权限）；4（读取权限）；5（4+1 | 读取+执行）；6（4+2 | 读取+写入）；7（4+2+1 | 读取+写入+执行）以755为例：
-1-3位7等于4+2+1，rwx，所有者具有读取、写入、执行权限；
-4-6位5等于4+1+0，r-x，同组用户具有读取、执行权限但没有写入权限；
-7-9位5，同上，也是r-x，其他用户具有读取、执行权限但没有写入权限。rwx权限数字解释 
-chmod也可以用数字来表示权限如 chmod 777 file
-语法为：chmod abc file
-其中a,b</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-09-18&nbsp;&nbsp;
-        
-        
-          <i class="iconfont icon-inbox"></i>
-          
-            <a href="/categories/%E5%9F%BA%E7%A1%80">基础</a>&nbsp;
-          &nbsp;
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/Linux">Linux</a>&nbsp;
-          
-            <a href="/tags/%E6%9D%83%E9%99%90">权限</a>&nbsp;
+            <a href="/tags/%E5%9F%BA%E7%A1%80">基础</a>&nbsp;
           
         
       </div>

@@ -14,7 +14,7 @@
   <meta name="description" content="Mysql / Java / Js / WxChartWeb">
   <meta name="author" content="3sansai">
   <meta name="keywords" content="Dream">
-  <title>java-队列 ~ 3sansai</title>
+  <title>分类 - 基础 ~ 3sansai</title>
   <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
@@ -30,7 +30,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 80vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -101,9 +101,6 @@
             </span>
 
             
-              <br>
-              <p>星期五, 十月 11日 2019, 9:54 上午</p>
-            
           </div>
 
           
@@ -114,124 +111,33 @@
 
   <main>
     
+      <div class="container nopadding-md">
+        <div class="py-5 z-depth-3" id="board">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<div class="list-group">
+  <p class="h4">共计 1 篇文章</p>
+  <hr>
+  
+    
       
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="py-5 z-depth-3" id="board">
-        <div class="post-content mx-auto">
-          <div class="markdown-body">
-            <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><pre><code>队列是数据结构中比较重要的一种类型（是一种数据结构），它支持 FIFO，尾部添加、头部删除（先进队列的元素先出队列）</code></pre><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><pre><code>队列的特点就是先进先出，和生活中的排队等候差不多</code></pre><h2 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h2><pre><code>队列有两种：
-单队列 ： 就是常见的队列，每次添加元素时，是添加对队尾。
-循环队列（暂时没看到）</code></pre><h2 id="Java简单代码实现"><a href="#Java简单代码实现" class="headerlink" title="Java简单代码实现"></a>Java简单代码实现</h2><pre><code>/**
-* desc : 队列的数组实现
-*/
-public class Queue {
-    private Object[] queue;
-    private int length;
-    private int head = 0;
-    private int tail = 0;
-
-    public Queue(int len) {
-        this.length = len;
-        queue = new Object[len];
-    }
-
-    public void enQueue(Object obj) {
-        if (tail == length) {
-            tail = 0;
-        }
-        queue[tail++] = obj;
-    }
-
-    public Object deQueue() {
-        if (queue[head] == null) {
-            return null;
-        }
-
-        Object temp = queue[head];
-        if (head == length) {
-            head = 0;
-        } else {
-            head++;
-        }
-
-        return temp;
-    }
-}</code></pre>
-            <hr>
-          </div>
-          <br>
-          <div>
-            
-              <p>
-                <i class="iconfont icon-inbox"></i>
-                
-                  <a class="hover-with-bg" href="/categories/%E5%9F%BA%E7%A1%80">基础</a>
-                  &nbsp;
-                
-              </p>
-            
-            <p>
-              <i class="iconfont icon-tag"></i>
-              
-                <a class="hover-with-bg" href="/tags/Java">Java</a>
-              
-                <a class="hover-with-bg" href="/tags/%E5%9F%BA%E7%A1%80">基础</a>
-              
-            </p>
-            
-              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
-            
+      <p class="h5">2019</p>
+    
+    <a href="/2019/09/06/linux-基础语法/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">linux-基础语法</span>
+      <span style="float: right;">09-06</span>
+    </a>
+  
+</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="d-none d-lg-block col-lg-2 toc-container">
-      
-  <div id="toc">
-    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
-    <div id="tocbot"></div>
-  </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- custom -->
-
-
-<!-- Comments -->
-<div class="col-lg-7 mx-auto nopadding-md">
-  <div class="container comments mx-auto" id="comments">
-    
-      <br><br>
-      
-      <div class="disqus" style="width:100%">
-  <div id="disqus_thread"></div>
-  <script>
-    var disqus_shortname = '';
-    var disqus_config = function () {
-      this.page.url = 'http://yoursite.com/2019/10/11/java-队列/';
-      this.page.identifier = '/2019/10/11/java-队列/';
-    };
-    (function () {
-      var d = document, s = d.createElement('script');
-      s.type = 'text/javascript';
-      s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow noopener">comments
-      powered by Disqus.</a></noscript>
-</div>
-    
-  </div>
-</div>
-
     
   </main>
 
@@ -285,11 +191,6 @@ public class Queue {
   <script src="/js/lazyload.js" ></script>
 
 
-  
-    <script src="/lib/tocbot/tocbot.min.js" ></script>
-  
-  <script src="/js/post.js" ></script>
-
 
   <script src="/lib/prettify/prettify.min.js" ></script>
   <script>
@@ -305,7 +206,7 @@ public class Queue {
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "java-队列&nbsp;",
+        "分类 - 基础&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

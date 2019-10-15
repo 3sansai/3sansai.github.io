@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>插入排序</title>
+    <link href="undefined2019/10/14/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"/>
+    <url>2019/10/14/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</url>
+    
+    <content type="html"><![CDATA[<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h3 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h3><p>插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。这个排序其实和我们生活中打扑克牌是一样的，我们先整理好手上的牌，然后将后摸的牌插入手牌中合适的位置。</p><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><ul><li>从第一个元素开始，该元素可以认为已经被排序；</li><li>取出下一个元素，在已经排序的元素序列中从后向前扫描；</li><li>如果该元素（已排序）大于新元素，将该元素移到下一位置；</li><li>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置；</li><li>将新元素插入到该位置后；<br>重复步骤2~5。</li></ul><h2 id="Java简单代码示例"><a href="#Java简单代码示例" class="headerlink" title="Java简单代码示例"></a>Java简单代码示例</h2><pre><code>   public static int[] insertionSort(int[] array) {    if (array.length == 0)//判断数组长度是否为零        return array;    int current;//临时变量    for (int i = 0; i &lt; array.length - 1; i++) {//遍历数组        current = array[i + 1];//变量存储数组中当前索引后一位值        int preIndex = i;//记录下标        /***         * 这里的while循环可以看作是从后向前的一个比较         */        while (preIndex &gt;= 0 &amp;&amp; current &lt; array[preIndex]) {//当下标大于等于零并且下一位小于当前位            array[preIndex + 1] = array[preIndex];            preIndex--;//这个索引--很多时候会忘了，造成下一步赋值错误，排序结果出现问题        }        array[preIndex + 1] = current;//循环中索引--了所以这里要加回来才是原来的索引    }    for (int j = 0; j &lt; array.length; j++)        System.out.print(array[j] + &quot;,&quot;);    return array;//返回排序好的数组}public static void main(String[] args) {    int[] arr = new int[]{2, 3, 2, 1, 8, 4, 5};    insertionSort(arr);}</code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>基础</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>排序算法</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>微信小程序—-工作</title>
     <link href="undefined2019/10/13/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94-%E5%B7%A5%E4%BD%9C/"/>
     <url>2019/10/13/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E2%80%94-%E5%B7%A5%E4%BD%9C/</url>
@@ -45,9 +72,9 @@
     
     <tags>
       
-      <tag>MySQL</tag>
-      
       <tag>基础</tag>
+      
+      <tag>MySQL</tag>
       
     </tags>
     
@@ -99,9 +126,9 @@
     
     <tags>
       
-      <tag>基础</tag>
-      
       <tag>Java</tag>
+      
+      <tag>基础</tag>
       
     </tags>
     
@@ -126,9 +153,9 @@
     
     <tags>
       
-      <tag>基础</tag>
-      
       <tag>Java</tag>
+      
+      <tag>基础</tag>
       
     </tags>
     
@@ -141,7 +168,7 @@
     <link href="undefined2019/10/11/%E5%A0%86%E6%8E%92%E5%BA%8F/"/>
     <url>2019/10/11/%E5%A0%86%E6%8E%92%E5%BA%8F/</url>
     
-    <content type="html"><![CDATA[<h2 id="堆排序定义"><a href="#堆排序定义" class="headerlink" title="堆排序定义"></a>堆排序定义</h2><h4 id="堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。"><a href="#堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。" class="headerlink" title="堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。"></a>堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。</h4><h4 id="堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。"><a href="#堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。" class="headerlink" title="堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。"></a>堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。</h4><h2 id="Java代码和详细注释如下："><a href="#Java代码和详细注释如下：" class="headerlink" title="Java代码和详细注释如下："></a>Java代码和详细注释如下：</h2><pre><code>public class HeapSort {    public static void main(String[] args) {        int[] arr = {7, 6, 7, 11, 5, 12, 3, 0, 1};        System.out.println(&quot;排序前：&quot; + Arrays.toString(arr));        sort(arr);        System.out.println(&quot;排序前：&quot; + Arrays.toString(arr));    }    public static void sort(int[] arr) {        //1.构建大顶堆        for (int i = arr.length / 2 - 1; i &gt;= 0; i--) {            //从第一个非叶子结点从下至上，从右至左调整结构            adjustHeap(arr, i, arr.length);        }        //2.调整堆结构+交换堆顶元素与末尾元素        for (int j = arr.length - 1; j &gt; 0; j--) {            swap(arr, 0, j);//将堆顶元素与末尾元素进行交换            adjustHeap(arr, 0, j);//重新对堆进行调整        }    }    /**    * 调整大顶堆（仅是调整过程，建立在大顶堆已构建的基础上）    *    * @param arr    * @param i    * @param length    */    public static void adjustHeap(int[] arr, int i, int length) {        int temp = arr[i];//先取出当前元素i        for (int k = i * 2 + 1; k &lt; length; k = k * 2 + 1) {//从i结点的左子结点开始，也就是2i+1处开始            if (k + 1 &lt; length &amp;&amp; arr[k] &lt; arr[k + 1]) {//如果左子结点小于右子结点，k指向右子结点                k++;            }            if (arr[k] &gt; temp) {//如果子节点大于父节点，将子节点值赋给父节点（不用进行交换）                arr[i] = arr[k];                i = k;            } else {                break;            }        }        arr[i] = temp;//将temp值放到最终的位置   }    /**    * 交换元素    *    * @param arr    * @param a    * @param b    */    public static void swap(int[] arr, int a, int b) {        int temp = arr[a];        arr[a] = arr[b];        arr[b] = temp;    }}</code></pre>]]></content>
+    <content type="html"><![CDATA[<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><h4 id="堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。"><a href="#堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。" class="headerlink" title="堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。"></a>堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。</h4><h4 id="堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。"><a href="#堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。" class="headerlink" title="堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。"></a>堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。</h4><h2 id="Java代码和详细注释如下："><a href="#Java代码和详细注释如下：" class="headerlink" title="Java代码和详细注释如下："></a>Java代码和详细注释如下：</h2><pre><code>public class HeapSort {    public static void main(String[] args) {        int[] arr = {7, 6, 7, 11, 5, 12, 3, 0, 1};        System.out.println(&quot;排序前：&quot; + Arrays.toString(arr));        sort(arr);        System.out.println(&quot;排序前：&quot; + Arrays.toString(arr));    }    public static void sort(int[] arr) {        //1.构建大顶堆        for (int i = arr.length / 2 - 1; i &gt;= 0; i--) {            //从第一个非叶子结点从下至上，从右至左调整结构            adjustHeap(arr, i, arr.length);        }        //2.调整堆结构+交换堆顶元素与末尾元素        for (int j = arr.length - 1; j &gt; 0; j--) {            swap(arr, 0, j);//将堆顶元素与末尾元素进行交换            adjustHeap(arr, 0, j);//重新对堆进行调整        }    }    /**    * 调整大顶堆（仅是调整过程，建立在大顶堆已构建的基础上）    *    * @param arr    * @param i    * @param length    */    public static void adjustHeap(int[] arr, int i, int length) {        int temp = arr[i];//先取出当前元素i        for (int k = i * 2 + 1; k &lt; length; k = k * 2 + 1) {//从i结点的左子结点开始，也就是2i+1处开始            if (k + 1 &lt; length &amp;&amp; arr[k] &lt; arr[k + 1]) {//如果左子结点小于右子结点，k指向右子结点                k++;            }            if (arr[k] &gt; temp) {//如果子节点大于父节点，将子节点值赋给父节点（不用进行交换）                arr[i] = arr[k];                i = k;            } else {                break;            }        }        arr[i] = temp;//将temp值放到最终的位置   }    /**    * 交换元素    *    * @param arr    * @param a    * @param b    */    public static void swap(int[] arr, int a, int b) {        int temp = arr[a];        arr[a] = arr[b];        arr[b] = temp;    }}</code></pre>]]></content>
     
     
     <categories>
@@ -207,9 +234,9 @@
     
     <tags>
       
-      <tag>基础</tag>
-      
       <tag>Java</tag>
+      
+      <tag>基础</tag>
       
     </tags>
     
@@ -234,9 +261,9 @@
     
     <tags>
       
-      <tag>基础</tag>
-      
       <tag>Java</tag>
+      
+      <tag>基础</tag>
       
     </tags>
     
