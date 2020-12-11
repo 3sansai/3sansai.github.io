@@ -14,7 +14,7 @@
   <meta name="description" content="Mysql / Java / Js / WxChartWeb">
   <meta name="author" content="3sansai">
   <meta name="keywords" content="Dream">
-  <title>java-栈 ~ 3sansai</title>
+  <title>分类 - 进阶 ~ 3sansai</title>
   <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
@@ -40,7 +40,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 80vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -111,9 +111,6 @@
             </span>
 
             
-              <br>
-              <p>星期五, 十月 11日 2019, 9:53 上午</p>
-            
           </div>
 
           
@@ -124,143 +121,33 @@
 
   <main>
     
+      <div class="container nopadding-md">
+        <div class="py-5 z-depth-3" id="board">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<div class="list-group">
+  <p class="h4">共计 1 篇文章</p>
+  <hr>
+  
+    
       
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="py-5 z-depth-3" id="board">
-        <div class="post-content mx-auto">
-          <div class="markdown-body">
-            <h2 id="栈的概念"><a href="#栈的概念" class="headerlink" title="栈的概念"></a>栈的概念</h2><pre><code>栈是一种只允许在一端进行插入或删除的线性表。栈的操作端通常被称为栈顶，另一端被称为栈底。
-栈的插入操作称作进栈（压栈|push）；栈删除操作称为出栈（弹栈|pop）</code></pre><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><pre><code>栈的特点是先进后出，就像超市货架上的货物，先放上去的压在下面，后放上去的在上面。</code></pre><h2 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h2><pre><code>顺序存储的栈称作顺序栈（常用的是数组实现），链式存储的栈称作链式栈</code></pre><h2 id="Java简单代码实现"><a href="#Java简单代码实现" class="headerlink" title="Java简单代码实现"></a>Java简单代码实现</h2><p> 我们可以围绕栈的4个元素来实现栈：<br> 状态：是否栈空；是否栈满。<br> 操作：压栈push;进栈pop。</p>
-<pre><code>/**
-* desc : 栈的数组实现
-*/
-public class Stack {
-
-    /**
-    * 栈的一些基础属性
-    */
-    private Object[] value;
-    private int top = -1;
-    private int size;
-
-    /**
-    * 构造方法
-    * @param size
-    */
-    public Stack(int size) {
-        value = new Object[size];
-        this.size = size;
-    }
-
-    /**
-    * 判断栈是否为空
-    * @return
-    */
-    public boolean isEmpty() {
-        return top == 0;
-    }
-
-    /**
-    * 栈添加元素
-    * @param val
-    */
-    public void push(Object val) {
-        if (top == size) {
-            throw new StackOverflowError();
-        }
-
-        value[++top] = val;
-    }
-
-    /**
-    * 栈取出元素
-    * @return
-    */
-    public Object pop() {
-        if (top &lt; 0) {
-            throw new EmptyStackException();
-        }
-
-        Object obj = value[top];
-        top--;
-        return obj;
-    }
-}</code></pre>
-            <hr>
-          </div>
-          <br>
-          <div>
-            
-              <p>
-                <i class="iconfont icon-inbox"></i>
-                
-                  <a class="hover-with-bg" href="/categories/%E5%9F%BA%E7%A1%80">基础</a>
-                  &nbsp;
-                
-              </p>
-            
-            <p>
-              <i class="iconfont icon-tag"></i>
-              
-                <a class="hover-with-bg" href="/tags/Java">Java</a>
-              
-                <a class="hover-with-bg" href="/tags/%E5%9F%BA%E7%A1%80">基础</a>
-              
-            </p>
-            
-              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
-            
+      <p class="h5">2019</p>
+    
+    <a href="/2019/11/01/设计模式/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">设计模式</span>
+      <span style="float: right;">11-01</span>
+    </a>
+  
+</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="d-none d-lg-block col-lg-2 toc-container">
-      
-  <div id="toc">
-    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
-    <div id="tocbot"></div>
-  </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- custom -->
-
-
-<!-- Comments -->
-<div class="col-lg-7 mx-auto nopadding-md">
-  <div class="container comments mx-auto" id="comments">
-    
-      <br><br>
-      
-      <div class="disqus" style="width:100%">
-  <div id="disqus_thread"></div>
-  <script>
-    var disqus_shortname = '';
-    var disqus_config = function () {
-      this.page.url = 'http://yoursite.com/2019/10/11/java-栈/';
-      this.page.identifier = '/2019/10/11/java-栈/';
-    };
-    (function () {
-      var d = document, s = d.createElement('script');
-      s.type = 'text/javascript';
-      s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow noopener">comments
-      powered by Disqus.</a></noscript>
-</div>
-    
-  </div>
-</div>
-
     
   </main>
 
@@ -314,11 +201,6 @@ public class Stack {
   <script src="/js/lazyload.js" ></script>
 
 
-  
-    <script src="/lib/tocbot/tocbot.min.js" ></script>
-  
-  <script src="/js/post.js" ></script>
-
 
   <script src="/lib/prettify/prettify.min.js" ></script>
   <script>
@@ -334,7 +216,7 @@ public class Stack {
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "java-栈&nbsp;",
+        "分类 - 进阶&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
