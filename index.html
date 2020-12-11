@@ -250,56 +250,6 @@ Java简单代码示例   public static int[] insertionSort(int[] array) {
     
     
     <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/10/14/数组/">
-        <p class="h4 index-header">插入排序</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">插入排序理解插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。这个排序其实和我们生活中打扑克牌是一样的，我们先整理好手上的牌，然后将后摸的牌插入手牌中合适的位置。
-原理
-从第一个元素开始，该元素可以认为已经被排序；
-取出下一个元素，在已经排序的元素序列中从后向前扫描；
-如果该元素（已排序）大于新元素，将该元素移到下一位置；
-重复步骤3，直到找到已排序的元素小于或者等于新元素的位置；
-将新元素插入到该位置后；重复步骤2~5。
-
-Java简单代码示例   public static int[] insertionSort(int[] array) {
-    if (array.length == 0)//判断数组长度是否为零
-        return array;
-    int current;//临时变量
-    for (int i = 0; i &lt; array.length - 1; i++) {//遍历数组
-        current = ar</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-14&nbsp;&nbsp;
-        
-        
-          <i class="iconfont icon-inbox"></i>
-          
-            <a href="/categories/%E5%9F%BA%E7%A1%80">基础</a>&nbsp;
-          &nbsp;
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/Java">Java</a>&nbsp;
-          
-            <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95">排序算法</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
       <a href="/2019/10/13/微信小程序-工作/">
         <p class="h4 index-header">微信小程序—-工作</p>
         
@@ -576,6 +526,56 @@ public class Stack {
     </div>
   </div>
 
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/09/27/冒泡排序/">
+        <p class="h4 index-header">冒泡排序</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">冒泡排序冒泡排序是所有排序算法中最基础的排序算法，冒泡排序十分稳定，但是当数据量庞大时，冒泡排序的耗时是最长的，冒泡排序的缺点就是需要消耗大量时间，优点是稳定。实现原理比较相邻的元素。如果第一个比第二个大，就交换他们两个。
+对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。
+针对所有的元素重复以上的步骤，除了最后一个。
+持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。Java代码简单实现 public static void main(String[] args) {
+    //冒泡排序算法
+    int[] numbers=new int[]{1,5,8,2,3,9,4};
+    int i,j;
+    for(i=0;i&lt;numbers.length;i++)
+    {
+        for(j=0;j&lt;numbers.length-1-i;j++)
+        {
+            if(numbers[j]&lt;numbers[j+1])
+            {
+   </div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-09-27&nbsp;&nbsp;
+        
+        
+          <i class="iconfont icon-inbox"></i>
+          
+            <a href="/categories/%E5%9F%BA%E7%A1%80">基础</a>&nbsp;
+          &nbsp;
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Java">Java</a>&nbsp;
+          
+            <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95">排序算法</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
 
 
   <nav aria-label="index posts navigation">
@@ -664,7 +664,7 @@ public class Stack {
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "鲁迅说：“我什么都没说过”&nbsp;",
+        "鲁迅说：“教大侄子如何编程”&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
