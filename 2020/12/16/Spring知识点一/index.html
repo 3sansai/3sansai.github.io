@@ -442,19 +442,34 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><h3 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h3><p>Spring 是一个开源框架，是为了解决企业应用程序开发复杂性而创建的。框架的主要优势之一就是其分层架构，分层架构允许您 选择使用哪一个组件，同时为 J2EE 应用程序开发提供集成的框架。</p>
-<h3 id="Spring特点"><a href="#Spring特点" class="headerlink" title="Spring特点"></a>Spring特点</h3><ol>
-<li>IOC（控制反转）或DI（依赖注入）：明确定义组件的接口，独立开发各个组件，然后根据组件的依赖关系组装运行；即将创建及管理对象的权利交给Spring容器。Spring是一个轻型容器(light-weight Container)，其核心是Bean工厂(Bean Factory)，用以构造我们所需要的M(Model）。能够让相互协作的软件组件保持松散耦合。降低了业务对象替换的复杂性，提高了组件之间的解耦。</li>
-<li>AOP（切面编程）：通过预编译方式和运行期动态代理实现在不修改源代码的情况下给程序动态统一添加功能的一种技术。即系统级的服务从代码中解耦出来。例如：将日志记录，性能统计，安全控制，事务处理，异常处理等代码从业务逻辑代码中划分出来。允许你把遍布应用各处的功能分离出来形成可重用组件。</li>
+                <h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><h3 id="Spring框架概述"><a href="#Spring框架概述" class="headerlink" title="Spring框架概述"></a>Spring框架概述</h3><ol>
+<li>Spring是轻量级的开源的JavaEE框架</li>
+<li>Spring可以解决企业应用开发的复杂性</li>
+<li>Spring有两个核心部分：IOC和Aop<br>（1）IOC：控制反转，把创建对象的过程交给Spring进行管理<br>（2）Aop：面向切面，不修改源代码进行功能增强</li>
+<li>Spring特点<br>（1）方便解耦，简化开发<br>（2）Aop编程支持<br>（3）方便测试程序<br>（4）方便和其他框架进行整合<br>（5）降低JavaAPI的使用难度<br>（6）方便进行事务操作</li>
 </ol>
-<h3 id="Spring-1"><a href="#Spring-1" class="headerlink" title="Spring"></a>Spring</h3><ol>
+<h3 id="入门案例"><a href="#入门案例" class="headerlink" title="入门案例"></a>入门案例</h3><ol>
+<li>下载Spring5（官网spring.io）</li>
+<li>下载地址：<a href="https://repo.spring.io/release/org/springframework/spring/" target="_blank" rel="noopener">https://repo.spring.io/release/org/springframework/spring/</a></li>
+<li>示用ideal创建普通Java项目导入Spring jar包<br><img src="../img/spring/spring02.png" alt="Alt text"></li>
+</ol>
+<p>基本功能包<br><img src="../img/spring/spring03.png" alt="Alt text"><br>还需日志包避免报错<br><img src="../img/spring/spring04.png" alt="Alt text"></p>
+<ol start="4">
+<li><p>创建普通类，在类里创建普通的方法</p>
+</li>
+<li><p>创建Spring配置文件，在配置文件中配置创建对象<br>（1）Spring配置文件使用xml文件格式<br><img src="../img/spring/spring01.png" alt="Alt text"></p>
+</li>
+<li><p>创建测试类测试</p>
+</li>
+</ol>
+<h3 id="Spring参考资料链接"><a href="#Spring参考资料链接" class="headerlink" title="Spring参考资料链接"></a>Spring参考资料链接</h3><ol>
 <li><a href="https://blog.csdn.net/weixin_45496190/article/details/107059038" target="_blank" rel="noopener">https://blog.csdn.net/weixin_45496190/article/details/107059038</a></li>
 <li><a href="https://blog.csdn.net/weixin_45496190/article/details/107067200" target="_blank" rel="noopener">https://blog.csdn.net/weixin_45496190/article/details/107067200</a></li>
 <li><a href="https://blog.csdn.net/weixin_45496190/article/details/107071204" target="_blank" rel="noopener">https://blog.csdn.net/weixin_45496190/article/details/107071204</a></li>
 <li><a href="https://blog.csdn.net/weixin_45496190/article/details/107082732" target="_blank" rel="noopener">https://blog.csdn.net/weixin_45496190/article/details/107082732</a></li>
 <li><a href="https://blog.csdn.net/weixin_45496190/article/details/107092107" target="_blank" rel="noopener">https://blog.csdn.net/weixin_45496190/article/details/107092107</a></li>
 </ol>
-<h3 id="Spring-Boot"><a href="#Spring-Boot" class="headerlink" title="Spring Boot"></a>Spring Boot</h3><ol>
+<h3 id="Spring-Boot参考资料链接"><a href="#Spring-Boot参考资料链接" class="headerlink" title="Spring Boot参考资料链接"></a>Spring Boot参考资料链接</h3><ol>
 <li><a href="https://blog.csdn.net/weixin_45496190/article/details/107296832" target="_blank" rel="noopener">https://blog.csdn.net/weixin_45496190/article/details/107296832</a></li>
 <li><a href="https://blog.csdn.net/weixin_45496190/article/details/107288240" target="_blank" rel="noopener">https://blog.csdn.net/weixin_45496190/article/details/107288240</a></li>
 <li><a href="https://blog.csdn.net/weixin_45496190/article/details/107168783" target="_blank" rel="noopener">https://blog.csdn.net/weixin_45496190/article/details/107168783</a></li>
